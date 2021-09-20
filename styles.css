@@ -1,0 +1,40 @@
+html, body {
+    margin:  0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.container {
+    height: 50%;
+    width: 80%;
+    border: 1px solid grey;
+    margin: auto;
+}
+
+.tab-selector {
+    display: flex;
+    border-bottom: 1px solid grey;
+    background-color: #f1f1f1;
+}
+
+.tab {
+    padding: 20px;
+}
+
+.tab:hover {
+    cursor: pointer;
+    background-color: darkgrey;
+}
+
+.content {
+    padding: 10px;
+    display: none;
+}
+
+.show-active {
+    display: block
+}
+
+.tab-active {
+    background-color: darkgrey;
+}
