@@ -8,27 +8,48 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script src="index.js"></script>
     <div class="container">
         <div class='tab-selector'>
             <div class="tab tab-active">Shoes</div>
-            <div class="tab">Shirt</div>
+            <div class="tab">Shirts</div>
             <div class="tab">Pants</div>
         </div>
         <div class='content-body'>
-            <div class="content show-active">
+            <div id='Shoes' class="content show-active">
                 <h4>Shoes</h4>
                 <p>High quality shoes</p>
             </div>
-            <div class="content">
+            <div id='Shirts' class="content">
                 <h4>Shirts</h4>
                 <p>Shirts come in several sizes</p>
             </div>
-            <div class="content">
+            <div id='Pants' class="content">
                 <h4>Pants</h4>
                 <p>Pants can be specifically tailored</p>
             </div>
     </div>    
-    </div>   
+    </div>  
+    
+    <script>
+        function setNewActiveTab(el) {
+            var contentBlocks = document.getElementsByClassName('content');
+            for (var content of contentBlocks) {
+                content.classList.remove('show-active');
+            }  
+            document.getElementById(el.textContent).classList.add('show-active');
+            var tabs = document.getElementsByClassName('tab');
+            for (var tab of tabs) {
+                tab.classList.remove('tab-active');
+                el.classList.add('tab-active');
+            }
+        }
+
+        var tabs = document.getElementsByClassName('tab');
+        for (var tab of tabs) {
+            tab.addEventListener('click', function(e) {
+                setNewActiveTab(e.currentTarget);
+            })
+        }
+    </script>
 </body>
 </html>
